@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+      *{
+        font-family: 'Trocchi','serif';
+      }
+      h1 {
+        color: #7c795d;
+        font-family: 'Trocchi','serif';
+        font-size: 45px;
+        font-weight: normal;
+        line-height: 48px;
+        margin: 0;
+        padding-bottom: 15px;
+      }
+
+      h2 { color: #7c795d;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 32px;
+        margin: 0 0 24px;
+      }
+    </style>
+    <style>
+      body {
+        background-color: #ffffff!important;
+      }
+
+      .login {
+        background-color: #ecf3f9;
+        width: 40%;
+        margin: 80px auto;
+        border-radius: 10px;
+        padding: 20px;
+        border-left: 5px solid #009688;
+        box-shadow: 0px 0px 0px 0px #3f51b5;
+      }
+
+      .login>.row>h2 {
+        margin: auto;
+      }
+
+      .btn-form {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+    </style>
+</head>
+<body>
+  <nav class="navbar is-fixed">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <p>MedShop</p>
+      </a>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="index.html#allProducts">
+          All Products
+        </a>
+        <a class="navbar-item" href="index.html#deals">
+          In Deal
+        </a>
+        <a class="navbar-item" href="#">
+          Contact Us
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="signup.html">
+              <strong>Cart</strong>
+            </a>
+            <a class="button is-light" href="login.html">
+              Log in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="login">
+      <div class="row">
+        <h2>Sign Up</h2>
+        <div class="col-md-12">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" placeholder="Ex. youremail@mail.com">
+          <br>
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Ex. eg: abc@paswod">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="submit" id="register" value="Sign Up" class="btn btn-outline-success btn-form">
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>MedShop</strong> by <a href="">NoOne</a>. The Website is licensed
+        <a href="">MIT</a>. The website content
+        is licensed <a href="">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
