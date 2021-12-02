@@ -89,23 +89,25 @@
     </div>
   </nav>
   <div class="container">
+  	<form method="post" action="signup">
     <div class="login">
       <div class="row">
         <h2>Sign Up</h2>
         <div class="col-md-12">
           <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" placeholder="Ex. youremail@mail.com">
+          <input type="text" class="form-control" name="email" placeholder="Ex. youremail@mail.com">
           <br>
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Ex. eg: abc@paswod">
+          <input type="password" class="form-control" name="password" placeholder="Ex. eg: abc@paswod">
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <input type="submit" id="register" value="Sign Up" class="btn btn-outline-success btn-form">
+          <input type="submit" value="Sign Up" class="btn btn-outline-success btn-form">
         </div>
       </div>
     </div>
+    </form>
   </div>
   <footer class="footer">
     <div class="content has-text-centered">
