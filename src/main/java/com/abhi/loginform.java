@@ -3,6 +3,8 @@ package com.abhi;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.swing.JOptionPane;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -26,11 +28,14 @@ public class loginform extends HttpServlet {
              rs.include(request, response);
              HttpSession session=request.getSession();
              session.setAttribute("email", email);
+
         }
         else
         {
+        //	JOptionPane.showMessageDialog(null, "Username or Password incorrect");
+            
            out.println("Username or Password incorrect");
-           RequestDispatcher rs = request.getRequestDispatcher("index.html");
+           RequestDispatcher rs = request.getRequestDispatcher("signup.html");
            rs.include(request, response);
         }
         

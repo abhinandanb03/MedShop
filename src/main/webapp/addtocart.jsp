@@ -24,6 +24,10 @@
 		        String msg = request.getParameter("msg");
 		        
 		        String email_id = (String)pageContext.getAttribute("email",pageContext.SESSION_SCOPE);
+	            if(request.getParameter("email_id")==null){
+	            	RequestDispatcher red = request.getRequestDispatcher("index.html");
+	                red.include(request, response);
+	            }
 	            
 		        Connection con;
 		        PreparedStatement pst;		
