@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class loginform extends HttpServlet {
  
@@ -23,6 +24,8 @@ public class loginform extends HttpServlet {
         	System.out.println("Logged in");
         	 RequestDispatcher rs = request.getRequestDispatcher("index.html");
              rs.include(request, response);
+             HttpSession session=request.getSession();
+             session.setAttribute("email", email);
         }
         else
         {
@@ -30,5 +33,6 @@ public class loginform extends HttpServlet {
            RequestDispatcher rs = request.getRequestDispatcher("index.html");
            rs.include(request, response);
         }
+        
     }  
 }
