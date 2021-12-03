@@ -22,23 +22,25 @@
 			    String qty = request.getParameter("qty");
 			    String ph_no = request.getParameter("ph_no");
 		        String msg = request.getParameter("msg");
-		
+		        
+		        String email_id = (String)pageContext.getAttribute("email",pageContext.SESSION_SCOPE);
+	            
 		        Connection con;
 		        PreparedStatement pst;		
 		        ResultSet rs;
 		
 		        Class.forName("com.mysql.jdbc.Driver");		
 		        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/medshop","root","");		
-		        pst = con.prepareStatement("insert into medreq(name,med_name,qty,phone_no,msg)values(?,?,?,?,?)");		
+		        pst = con.prepareStatement("insert into medreq(name,med_name,qty,phone_no,email,msg)values(?,?,?,?,?,?)");		
 	
 		        pst.setString(1, name);	
 		        pst.setString(2, med_name);		
 		        pst.setString(3, qty);
 		        pst.setString(4, ph_no);
-		        pst.setString(5, msg);	
+		        pst.setString(5, email_id);
+		        pst.setString(6, msg);	
 		        pst.executeUpdate();  
-		        String email_id = (String)pageContext.getAttribute("email",pageContext.SESSION_SCOPE);
-	            out.print("pagecontextdata email: "+email_id);
+		        
 		    
 		        %>
 		
