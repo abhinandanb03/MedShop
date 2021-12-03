@@ -20,8 +20,9 @@ public class loginform extends HttpServlet {
         String pass = request.getParameter("password");
         if(Validate.checkUser(email, pass))
         {
-            RequestDispatcher rs = request.getRequestDispatcher("Welcome");
-            rs.forward(request, response);
+        	System.out.println("Logged in");
+        	 RequestDispatcher rs = request.getRequestDispatcher("index.html");
+             rs.include(request, response);
         }
         else
         {

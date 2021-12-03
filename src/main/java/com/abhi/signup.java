@@ -38,9 +38,8 @@ public class signup extends HttpServlet {
       pst.setString(1, email);
       pst.setString(2, pass);
       pst.executeUpdate();  
-      out.println("inserted");
-      pst.executeUpdate();  
-      out.println("Database test created sucessfully.");
+      String msg = "User Created";
+      out.println("User Created"); 
       }
       catch (Exception e)
       {
