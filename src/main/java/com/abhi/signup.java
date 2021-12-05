@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager; 
 import java.sql.SQLException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -35,10 +37,17 @@ public class signup extends HttpServlet {
       pst = con.prepareStatement("insert into userdetails(email,password)values(?,?)");
       pst.setString(1, email);
       pst.setString(2, pass);
+      if(Validate.checkUser(email, pass))
+      {
+      	out.println("username already exists");
+      	 RequestDispatcher rs = req.getRequestDispatcher("index.html");
+           rs.include(req, res);
+      }
       pst.executeUpdate();  
       System.out.println("User Created");
-      String redirectURL = "index.html";
+      String redirectURL = "login.html";
       res.sendRedirect(redirectURL);
+
       }
       catch (Exception e)
       {

@@ -24,18 +24,15 @@ public class loginform extends HttpServlet {
         if(Validate.checkUser(email, pass))
         {
         	System.out.println("Logged in");
-        	 RequestDispatcher rs = request.getRequestDispatcher("index.html");
-             rs.include(request, response);
              HttpSession session=request.getSession();
              session.setAttribute("email", email);
-
+             RequestDispatcher rs = request.getRequestDispatcher("index.html");
+             rs.include(request, response);
         }
         else
         {
-        //	JOptionPane.showMessageDialog(null, "Username or Password incorrect");
-            
            out.println("Username or Password incorrect");
-           RequestDispatcher rs = request.getRequestDispatcher("signup.html");
+           RequestDispatcher rs = request.getRequestDispatcher("login.html");
            rs.include(request, response);
         }
         
